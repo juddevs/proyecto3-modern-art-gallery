@@ -1,0 +1,102 @@
+@use '../abstracts/abstracts' as a;
+
+.location{
+    &__map{
+        position:relative;
+        overflow: hidden;
+        width: 100%;
+        height: 550px;
+        iframe{
+            width: 100%;
+            height: 100%;
+            filter:grayscale(100%) brightness(70%) contrast(200%);
+        }
+        @include a.breakpoint(desktop){
+            height: 600px;
+        }
+    }
+    &__icon{
+        position:absolute;
+        top:256px;
+        left:351px;
+        @include a.breakpoint(desktop){
+            top:40%;
+            left: 48%;
+        }
+
+    }
+    &__info{
+        background-color: a.$black; 
+        padding-left:16px;
+        @include a.breakpoint(tablet){
+            display:flex;
+            justify-content: space-between;
+            padding:88px 40px 80px 39px;
+            gap:68px; 
+        }
+        @include a.breakpoint(desktop){
+            padding: 104px 11.46% 128px 11.46%;
+        }
+    }
+
+    &__text{
+        @include a.breakpoint(desktop){
+            width: 540px;
+        }
+    }
+
+    &__title{
+        @include a.h2-title;
+        color:white;
+        font-weight: 900;
+        padding-top:48px;
+        margin-bottom: 48px;
+        @include a.breakpoint(tablet){
+            font-size: 55px;
+            line-height: 50px;
+            margin:0;
+            padding:0;
+        }
+        @include a.breakpoint(desktop){
+            font-size: 70px;
+            line-height: 70px;
+            width: 350px;
+        }
+    }
+    &__subtitle{
+        @include a.h3-title;
+        color: a.$gold;
+        margin-bottom: 20px;
+        @include a.breakpoint(desktop){
+            font-size: 36px;
+            line-height: 36px;
+        }
+    }
+    &__parrafo{
+        &--1{
+        @include a.parrafos;
+        color:a.$white;
+        display:flex;
+        flex-direction: column;
+        margin-bottom:20px;
+        }
+        @include a.breakpoint(desktop){
+            font-size: 22px;
+            line-height: 32px;
+        }
+        &--2{
+        @include a.parrafos;
+        color:a.$white;    
+        padding-right: 16px;  
+        padding-bottom: 56px;
+        @include a.breakpoint(tablet){
+            padding:0;
+        }  
+        @include a.breakpoint(desktop){
+            font-size: 22px;
+            line-height: 32px;
+        }    
+        }
+    }
+
+}

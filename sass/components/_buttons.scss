@@ -1,0 +1,18 @@
+@use '../abstracts/abstracts' as a;
+
+.button{
+    @include a.button();
+    &--back-home{
+        position:absolute;
+        top:0;
+        left:0;
+        z-index: 10;
+        @include a.breakpoint(tablet){
+            margin-left:39px;
+        }
+        @include a.breakpoint(desktop){
+            margin-left: 10.84%;
+        }
+
+    }
+}

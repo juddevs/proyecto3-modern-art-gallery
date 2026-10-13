@@ -1,0 +1,89 @@
+@use '../abstracts/abstracts' as a;
+
+.hero{
+    margin-bottom: 120px;
+    @include a.breakpoint(tablet){
+        display: flex;
+        position:relative;
+    }
+    @include a.breakpoint(desktop){
+        margin-bottom: 180px;
+        position:relative;
+        &::before{
+            content:"";
+            width: 31.27%;
+            height: 799px;
+            background-color: a.$black;
+            flex-shrink: 0;
+        }
+    }
+
+    &__content{
+        padding-left:16px;
+        padding-right: 16px;
+        @include a.breakpoint(tablet){
+            position:absolute;
+            right: 40px;
+            top:145px;
+            width: 339px;
+            height: 410px;
+            padding:0;
+        }
+        @include a.breakpoint(desktop){
+            position:absolute;
+            display: flex;
+            justify-content: space-between;
+            right: 11.39%;
+            left:11.46%;
+            top: 189px;
+            width:auto;
+            padding: 0;
+            margin:0;
+            gap:17.09%;
+        }
+
+    }
+
+    &__image{
+        margin-bottom: 32px;
+        img{
+            height: 240px;
+            @include a.breakpoint(tablet){
+                width: 437px;
+                height:700px;
+            }
+        @include a.breakpoint(desktop){
+            width: 540px;
+            height: 800px;
+            }
+        }
+    } 
+
+    &__title{
+        @include a.h1-title;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 32px;
+        font-weight: 900;
+        @include a.breakpoint(tablet){
+            margin-bottom: 48px;
+        }
+        @include a.breakpoint(desktop){
+            color:a.$white;
+            font-size: 96px;
+            line-height: 88px;
+        }
+    }
+    &__description{
+        @include a.parrafos;
+        margin-bottom: 32px;
+        @include a.breakpoint(tablet){
+            margin-bottom: 48px;
+        }
+        @include a.breakpoint(desktop){
+            width: 350px;
+            font-size: 22px;
+            line-height: 32px;
+        }
+    }
+}

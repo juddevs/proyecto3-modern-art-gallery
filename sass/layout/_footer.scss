@@ -1,0 +1,79 @@
+@use '../abstracts/abstracts' as a;
+
+.footer{
+    background-color: a.$black;
+    padding-bottom: 48px;
+    @include a.breakpoint(tablet){
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 56px 40px;
+        padding-left:39px;    
+    }
+    @include a.breakpoint(desktop){
+        padding:80px 11.46%;
+    }
+    &__title{
+        width: 110.05px;
+        height: 40px;
+        margin-top:48px;
+        margin-left: 32px;
+        margin-bottom: 38px;
+        @include a.breakpoint(tablet){
+            margin:0;
+        }
+        @include a.breakpoint(desktop){
+            width: 159.57px;
+            height: 58px;
+        }
+    }
+
+    &__info{
+        padding-left:32px;
+        padding-right: 32px;
+        padding-bottom:38px;
+        
+        @include a.breakpoint(tablet){
+            width: 281px;
+            padding:0;
+            margin:0;
+            margin-right: 133px;
+            }
+        @include a.breakpoint(desktop){
+            width: 430px;
+            font-size: 18px;
+            line-height: 28px;
+        }
+
+        &--white{
+            @include a.parrafo-footer;
+            color:white;
+            padding-left: 32px;
+            font-size:16px;
+            line-height: 26px;
+            @include a.breakpoint(desktop){
+                font-size: 18px;
+                line-height: 26px;
+                padding:0;
+            }
+        }
+    }
+    &__networks{
+        display: flex;
+        margin-left: 32px;
+        gap:20px;
+        @include a.breakpoint(tablet){
+            margin-left: 0;
+        }
+    }
+    &__icon{
+        width: 20px;
+        height: 20px;
+    }
+
+
+    &--location{
+        background-color: a.$gold;
+        color:a.$black;
+    }
+}

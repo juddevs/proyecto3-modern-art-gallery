@@ -1,0 +1,150 @@
+@use '../abstracts/abstracts' as a;
+
+.info{
+    padding-left:16px;
+    padding-right: 16px; 
+    margin-bottom: 120px;
+    @include a.breakpoint(tablet){
+        padding-left: 39px;
+        padding-right: 40px;
+        margin-bottom: 120px;
+    }
+    @include a.breakpoint(desktop){
+        margin-left:11.46%;
+        margin-right: 11.39%;
+        padding: 0;
+    }
+    &__presentation{
+        @include a.breakpoint(tablet){
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        @include a.breakpoint(desktop){
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__text{
+        @include a.breakpoint(tablet){
+            width: 223px;
+            margin-right: 68px;
+            margin-top:36px;
+        }
+        @include a.breakpoint(desktop){
+            margin:0;
+            padding:0;
+            width: 350px;
+            margin-top:60px;
+        }
+    }
+    &__img{
+        &--first{
+            width: 343px;
+            height: 320px;
+            margin-bottom: 25px;
+            @include a.breakpoint(tablet){
+                margin-bottom: 11px;
+                width: 398px;
+                height: 400px;
+            }
+            @include a.breakpoint(desktop){
+                margin:0;
+                width: 635px;
+                height: 400px;
+            }
+
+        }
+
+    }
+
+    &__title{
+        @include a.h2-title;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 21px;
+        font-weight: 900;
+        @include a.breakpoint(desktop){
+            font-size: 60px;
+            line-height: 60px;
+        }
+        &--white{
+            color: a.$white;
+            padding:24px;
+            padding-top:48px;
+            margin:0;
+            @include a.breakpoint(tablet){
+                padding-top: 85px;
+            }
+
+        }
+    }
+    &__description{
+        @include a.parrafos;
+        margin-bottom: 32px;
+        &--white{
+            color: a.$white;
+            padding: 0 24px 47px 24px;
+        }
+        @include a.breakpoint(desktop){
+            font-size: 22px;
+            line-height: 32px;
+        }
+    }
+    &__experience{
+        @include a.breakpoint(tablet){
+            display: flex;
+        }
+        @include a.breakpoint(desktop){
+            justify-content: space-between;
+        }
+        &--figure-second{
+            @include a.breakpoint(desktop){
+                width:57.20%;
+            }
+        }
+    }
+
+    &__right{
+        @include a.breakpoint(tablet){
+            width: 280px;
+        }
+        @include a.breakpoint(desktop){
+            width: 39.92%;
+        }
+    }
+
+
+    &__experience-img{
+        &--second{
+            width: 343px;
+            height: 480px;
+            margin-bottom: 16px;
+            @include a.breakpoint(tablet){
+                width: 398px;
+                height: 720px;
+                margin-right: 11px;
+                margin-bottom: 0;
+            }
+            @include a.breakpoint(desktop){
+                width: 100%;
+                margin:0;
+            }
+        }
+        &--third{
+            width:343px;
+            height: 200px;
+            margin-bottom: 16px;
+            @include a.breakpoint(tablet){
+                height: 313px;
+                margin-bottom: 11px;
+            }
+        }
+    }
+    &__experience-text{
+        background-color: a.$black;
+        @include a.breakpoint(tablet){
+            height: 396px;
+        }
+    }
+}

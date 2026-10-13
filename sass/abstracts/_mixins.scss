@@ -1,0 +1,106 @@
+@use 'variables' as v;
+
+@mixin breakpoint($bp) {
+  @if $bp == tablet {
+    @media (min-width: v.$bp-tablet) {
+      @content;
+    }
+  }
+
+  @if $bp == desktop {
+    @media (min-width: v.$bp-desktop) {
+      @content;
+    }
+  }
+
+}
+
+@mixin h1-title{
+  text-transform: uppercase;
+  font-family: v.$title-font;
+  color: v.$black;
+  font-size: 60px;
+  line-height: 55px;
+  @include breakpoint(tablet){
+    font-size: 70px;
+    line-height: 65px;
+  }
+}
+
+@mixin h2-title{
+  text-transform: uppercase;
+  font-family: v.$title-font;
+  color: v.$black;
+  font-size: 50px;
+  line-height: 45px;
+}
+
+@mixin h3-title{
+  text-transform: uppercase;
+  font-family: v.$title-font;
+  color: v.$black;
+  font-size: 32px;
+  line-height: 32px;
+}
+
+@mixin h4-title{
+  text-transform: uppercase;
+  font-family: v.$title-font;
+  color: v.$black;
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: 900;
+}
+
+@mixin parrafos{
+  font-family: v.$parrafo-font;
+  color: v.$black;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 28px;
+}
+@mixin parrafo-footer{
+  font-family: v.$parrafo-font;
+  color: v.$black;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+
+
+
+
+//buttons
+
+@mixin button(){
+  display: inline-flex;
+  background-color: v.$black;
+  text-decoration: none;
+  &__text{
+    color: v.$white;
+    font-size: 20px;
+    font-family: v.$title-font;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 24px 32px;
+    padding-right:35px;
+  }
+  &__icon{
+    background-color: v.$gold;
+    color: v.$white;
+    padding: 0 24px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+  }
+  &:hover{
+    .button__text{
+      background-color: v.$gold;
+      color:v.$white;
+    }
+    .button__icon{
+      background-color: v.$black;
+    }
+  }
+}
